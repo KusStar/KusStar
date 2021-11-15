@@ -3,5 +3,6 @@
   "width": 512,
   "height": 256,
   "frameTime": 16,
+  "outDir": "../../snapshot",
   "outputName": "kusstar.gif"
 }
