@@ -1,0 +1,29 @@
+{
+  "name": "kusstar-site",
+  "private": true,
+  "version": "0.0.1",
+  "scripts": {
+    "start": "yarn dev",
+    "dev": "vite --host",
+    "build": "tsc && vite build",
+    "pub": "npm run build && vercel --prod"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@types/yt-player": "^3.5.1",
+    "canvas-fit": "^1.5.0",
+    "events": "^3.3.0",
+    "gl-mat4": "^1.2.0",
+    "gl-vec3": "^1.1.3",
+    "kusstar": "workspace:^0.2.1",
+    "popmotion": "^11.0.0",
+    "regl": "^2.1.0",
+    "yt-player": "^3.5.0"
+  },
+  "devDependencies": {
+    "mouse-change": "^1.4.0",
+    "mouse-wheel": "^1.2.0",
+    "typescript": "^4.4.4",
+    "vite": "^2.6.13"
+  }
+}
