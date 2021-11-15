@@ -27,7 +27,7 @@ const main = async () => {
           fps: 60,
           duration: 5,
           outDir: path.join(ASSETS_DIR, 'snapshot'),
-          outputName: outFile
+          outName: outFile
         })
       )
       snapshot.push({

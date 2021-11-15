@@ -24,13 +24,13 @@ const renderToGif = (
   config.width = config.width || _config.width
   config.height = config.height || _config.height
   config.outDir = config.outDir || _config.outDir
-  config.outName = config.outName || _config.outputName
+  config.outName = config.outName || _config.outName
 
   const OUT_DIR = path.join(config.outDir)
   if (!fs.existsSync(OUT_DIR)) {
     fs.mkdirSync(OUT_DIR, { recursive: true })
   }
-  const OUT_FILE = path.join(OUT_DIR, config.outputName)
+  const OUT_FILE = path.join(OUT_DIR, config.outName)
   const TOTAL_FRAME = config.duration * config.fps
   const WIDTH = config.width || 512
   const HEIGHT = config.height || 256

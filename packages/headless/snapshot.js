@@ -2,4 +2,4 @@
 const kusstar = require('kusstar')
 const { renderToGif } = require('./index')
 
-renderToGif(kusstar)
+renderToGif(kusstar, { quality: 10 })
