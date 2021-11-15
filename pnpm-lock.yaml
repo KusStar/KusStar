@@ -32,7 +32,7 @@ importers:
 
   packages/kusstar:
     specifiers:
-      vox-to-mesh: workspace:^0.0.1
+      vox-to-mesh: workspace:^1.0.0
     devDependencies:
       vox-to-mesh: link:../vox-to-mesh
 
@@ -69,12 +69,12 @@ importers:
 
   packages/vox-to-mesh:
     specifiers:
-      rambda: ^6.9.0
+      ramda: ^0.27.1
       vox-reader: ^2.0.3
       voxel-triangulation: ^1.3.4
       zeros: ^1.0.0
-    devDependencies:
-      rambda: 6.9.0
+    dependencies:
+      ramda: 0.27.1
       vox-reader: 2.0.3
       voxel-triangulation: 1.3.4
       zeros: 1.0.0
@@ -620,7 +620,7 @@ packages:
     resolution: {integrity: sha1-9NZnQQ6FDToxOn0tt7HlBbsDTMU=}
     dependencies:
       uniq: 1.0.1
-    dev: true
+    dev: false
 
   /dashdash/1.14.1:
     resolution: {integrity: sha1-hTz6D3y+L+1d4gMmuN1YEDX24vA=}
@@ -1249,7 +1249,7 @@ packages:
     resolution: {integrity: sha1-uwKZQEoWoWeyB5goIbM/0KrZIDs=}
     dependencies:
       sprintf: 0.1.5
-    dev: true
+    dev: false
 
   /flat-cache/3.0.4:
     resolution: {integrity: sha512-dm9s5Pw7Jc0GvMYbshN6zchCA9RgQlzzEZX3vylR9IqFfS8XciblUXOKfW6SiuJ0e13eDYZoZV5wdrev7P3Nwg==}
@@ -1568,7 +1568,7 @@ packages:
 
   /iota-array/1.0.0:
     resolution: {integrity: sha1-ge9X/l0FgUzVjCSDYyqZwwoOgIc=}
-    dev: true
+    dev: false
 
   /is-bigint/1.0.4:
     resolution: {integrity: sha512-zB9CruMamjym81i2JZ3UMn54PKGsQzsJeo6xvN3HJJ4CAsQNB6iRutp2To77OfCNuoxspsIhzaPoO1zyCEhFOg==}
@@ -1586,7 +1586,7 @@ packages:
 
   /is-buffer/1.1.6:
     resolution: {integrity: sha512-NcdALwpXkTm5Zvvbk7owOUSvVvBKDgKP5/ewfXEznmQFfs4ZRmanOeKBTjRVjka3QFoN6XJ+9F3USqfHqTaU5w==}
-    dev: true
+    dev: false
 
   /is-callable/1.2.4:
     resolution: {integrity: sha512-nsuwtxZfMX67Oryl9LCQ+upnC0Z0BgpwntpS89m1H/TLF0zNfzfLMV/9Wa/6MZsj0acpEjAO0KF1xT6ZdLl95w==}
@@ -1761,7 +1761,7 @@ packages:
 
   /libtess/1.2.2:
     resolution: {integrity: sha1-Fz61KhpXoCOP5I8F0SJFB0SX+Jg=}
-    dev: true
+    dev: false
 
   /load-script2/2.0.6:
     resolution: {integrity: sha512-pyuw/AR+ycZkRKgkMyXOIf/o2OnRQPc9grjZ04wVOeoJ7SqX97WlcZahl+3/r5qi09L/5d0iCVZ0q4OqNT/v0Q==}
@@ -1919,21 +1919,21 @@ packages:
     resolution: {integrity: sha1-WeiNLDKn7ryxvGkPrhQVeVV6YU4=}
     dependencies:
       cwise-compiler: 1.1.3
-    dev: true
+    dev: false
 
   /ndarray-show/2.0.0:
     resolution: {integrity: sha1-KpBJYO12FcWvWtDcdwdJdhSAIdQ=}
     dependencies:
       fixed-width-float: 1.0.0
       ndarray: 1.0.19
-    dev: true
+    dev: false
 
   /ndarray/1.0.19:
     resolution: {integrity: sha512-B4JHA4vdyZU30ELBw3g7/p9bZupyew5a7tX1Y/gGeF2hafrPaQZhgrGQfsvgfYbgdFZjYwuEcnaobeM/WMW+HQ==}
     dependencies:
       iota-array: 1.0.0
       is-buffer: 1.1.6
-    dev: true
+    dev: false
 
   /node-abi/2.30.1:
     resolution: {integrity: sha512-/2D0wOQPgaUWzVSVgRMx+trKJRC2UG4SUc4oCJoXx9Uxjtp0Vy3/kt7zcbxHF8+Z/pK3UloLWzBISg72brfy1w==}
@@ -2236,13 +2236,9 @@ packages:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
     dev: true
 
-  /rambda/6.9.0:
-    resolution: {integrity: sha512-yosVdGg1hNGkXPzqGiOYNEpXKjEOxzUCg2rB0l+NKdyCaSf4z+i5ojbN0IqDSezMMf71YEglI+ZUTgTffn5afw==}
-    dev: true
-
   /ramda/0.27.1:
     resolution: {integrity: sha512-PgIdVpn5y5Yns8vqb8FzBUEYn98V3xcPgawAkkgj0YJ0qDsnHCiNmZYfOGMgOvoB0eWFLpYbhxUR3mxfDIMvpw==}
-    dev: true
+    dev: false
 
   /rc/1.2.8:
     resolution: {integrity: sha512-y3bGgqKj3QBdxLbLkomlohkvsA8gdAiUQlSBJnBhfn+BPxg4bc62d8TcBW15wavDfgexCgccckhcZvywyQYPOw==}
@@ -2455,7 +2451,7 @@ packages:
     resolution: {integrity: sha1-j4PjmpMXwaUCy324BQ5Rxnn27c8=}
     engines: {node: '>=0.2.4'}
     deprecated: The sprintf package is deprecated in favor of sprintf-js.
-    dev: true
+    dev: false
 
   /sshpk/1.16.1:
     resolution: {integrity: sha512-HXXqVUq7+pcKeLqqZj6mHFUMvXtOJt1uoUx09pFW6011inTMxqI8BA8PM95myrIyyKwdnzjdFjLiE6KBPVtJIg==}
@@ -2705,11 +2701,11 @@ packages:
 
   /underscore/1.13.1:
     resolution: {integrity: sha512-hzSoAVtJF+3ZtiFX0VgfFPHEDRm7Y/QPjGyNo4TVdnDTdft3tr8hEkD25a1jC+TjTuE7tkHGKkhwCgs9dgBB2g==}
-    dev: true
+    dev: false
 
   /uniq/1.0.1:
     resolution: {integrity: sha1-sxxa6CVIRKOoKBVBzisEuGWnNP8=}
-    dev: true
+    dev: false
 
   /uri-js/4.4.1:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
@@ -2765,7 +2761,7 @@ packages:
 
   /vox-reader/2.0.3:
     resolution: {integrity: sha512-vY2cCFgK0/h4a7IHRUOCv5Vubo+ZtFIrzm+Bz6ZrJyKP7gzfdJmK4MjHggmvp76+H/b3y/6zWIF8wn9bH+xWLQ==}
-    dev: true
+    dev: false
 
   /voxel-triangulation/1.3.4:
     resolution: {integrity: sha512-FnC4QZKwFKbsky1K9vtRcDSn/RPgEQfkO7lFgGbOAYsAfglU2VtCKRHliUCQc+wOIN9GUonj6SUal588KZQcxg==}
@@ -2777,7 +2773,7 @@ packages:
       ramda: 0.27.1
       underscore: 1.13.1
       zeros: 1.0.0
-    dev: true
+    dev: false
 
   /wcwidth/1.0.1:
     resolution: {integrity: sha1-8LDc+RW8X/FSivrbLA4XtTLaL+g=}
@@ -2849,4 +2845,4 @@ packages:
     resolution: {integrity: sha1-ZOLYPA2o0yKqTLiCSXsxt9wzpUA=}
     dependencies:
       ndarray: 1.0.19
-    dev: true
+    dev: false

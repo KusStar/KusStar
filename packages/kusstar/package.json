@@ -12,6 +12,6 @@
   "repository": "https://github.com/KusStar/KusStar",
   "license": "MIT",
   "devDependencies": {
-    "vox-to-mesh": "workspace:^0.0.1"
+    "vox-to-mesh": "workspace:^1.0.0"
   }
 }
