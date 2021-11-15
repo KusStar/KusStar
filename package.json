@@ -1,0 +1,14 @@
+{
+  "name": "kusstar-root",
+  "private": true,
+  "version": "0.0.1",
+  "scripts": {
+    "lint": "eslint --ext .ts ./",
+    "lint:fix": "npm run lint -- --fix"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@kuss/eslint-config-vanilla": "^2.2.0",
+    "eslint": "^8.1.0"
+  }
+}
