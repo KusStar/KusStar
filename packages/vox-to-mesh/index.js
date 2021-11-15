@@ -60,18 +60,18 @@ const voxToMeshFile = (voxFile, outputDir, name) => {
   const cjs = `exports.positions = ${positions};
 exports.cells = ${cells};
 exports.colors = ${colors};
-exports.normal = ${normal};
+exports.normals = ${normal};
   `
   const mjs = `export const positions = ${positions}
 export const cells = ${cells}
 export const colors = ${colors}
-export const normal = ${normal}
+export const normals = ${normal}
 `
 
   const typings = `export const positions: number[][];
 export const cells: number[][];
 export const colors: number[];
-export const normal: number[];
+export const normals: number[];
 `
 
   writeToFile(outputDir, `${name}.cjs`, cjs)
