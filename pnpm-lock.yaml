@@ -10,6 +10,14 @@ importers:
       '@kuss/eslint-config-vanilla': 2.2.0_eslint@8.2.0
       eslint: 8.2.0
 
+  packages/art:
+    specifiers:
+      headless: workspace:^1.0.0
+      vox-to-mesh: workspace:^1.0.0
+    dependencies:
+      headless: link:../headless
+      vox-to-mesh: link:../vox-to-mesh
+
   packages/headless:
     specifiers:
       '@types/three': ^0.134.0
@@ -20,6 +28,7 @@ importers:
       ora: 5.4.1
       regl: ^2.1.0
       three: ^0.134.0
+      vox-to-mesh: workspace:^1.0.0
     dependencies:
       '@types/three': 0.134.0
       angle-normals: 1.0.0
@@ -29,6 +38,7 @@ importers:
       ora: 5.4.1
       regl: 2.1.0
       three: 0.134.0
+      vox-to-mesh: link:../vox-to-mesh
 
   packages/kusstar:
     specifiers:

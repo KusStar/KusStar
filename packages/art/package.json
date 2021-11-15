@@ -1,0 +1,16 @@
+{
+  "name": "art",
+  "private": true,
+  "version": "1.0.0",
+  "main": "index.js",
+  "keywords": [],
+  "author": "KusStar",
+  "license": "MIT",
+  "scripts": {
+    "render-preview": "node ./scripts/render-preview"
+  },
+  "dependencies": {
+    "headless": "workspace:^1.0.0",
+    "vox-to-mesh": "workspace:^1.0.0"
+  }
+}
