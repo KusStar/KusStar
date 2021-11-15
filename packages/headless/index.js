@@ -21,7 +21,7 @@ const FRAME_TIME = config.frameTime || (1000 / 60)
 
 const OUT_DIR = path.join(__dirname, '../../snapshot')
 if (!fs.existsSync(OUT_DIR)) {
-  fs.mkdirSync(OUT_DIR)
+  fs.mkdirSync(OUT_DIR, { recursive: true })
 }
 const OUT_FILE = path.join(__dirname, '../../snapshot', config.outputName)
 const outStream = fs.createWriteStream(OUT_FILE)
