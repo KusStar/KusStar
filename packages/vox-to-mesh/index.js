@@ -30,9 +30,9 @@ const voxToMeshData = (voxFile) => {
   const colors = flatten(voxelValues.map((v) => alignedColors[v]))
 
   return {
-    vertices,
+    positions: vertices,
+    cells: indices,
     normals,
-    indices,
     colors
   }
 }
@@ -45,15 +45,20 @@ const writeToFile = (outDir, name, data) => {
 }
 
 const voxToMeshFile = (voxFile, outputDir, name) => {
-  const { vertices, normals: _normals, indices, colors: _colors } = voxToMeshData(voxFile)
+  const {
+    positions: _positions,
+    cells: _cells,
+    normals: _normals,
+    colors: _colors
+  } = voxToMeshData(voxFile)
   console.log(`meshData:
-    vertices: ${vertices.length}
-    indices: ${indices.length}
+    positions: ${_positions.length}
+    cells: ${_cells.length}
     normals: ${_normals.length}
     colors: ${_colors.length}
   `)
-  const positions = JSON.stringify(vertices)
-  const cells = JSON.stringify(indices)
+  const positions = JSON.stringify(_positions)
+  const cells = JSON.stringify(_cells)
   const colors = JSON.stringify(_colors)
   const normal = JSON.stringify(_normals)
 
