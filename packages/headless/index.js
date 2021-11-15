@@ -11,21 +11,30 @@ const GIFEncoder = require('gifencoder')
 const { createCanvas } = require('node-canvas-webgl')
 const ora = require('ora')
 const path = require('path')
+
 const _config = require('./config.json')
 
 const renderToGif = (
   meshData,
-  config = _config
+  config = {},
+  onFinish
 ) => {
-  const OUT_DIR = path.join(__dirname, config.outDir)
+  config.duration = config.duration || _config.duration
+  config.fps = config.fps || _config.fps
+  config.width = config.width || _config.width
+  config.height = config.height || _config.height
+  config.outDir = config.outDir || _config.outDir
+  config.outName = config.outName || _config.outputName
+
+  const OUT_DIR = path.join(config.outDir)
   if (!fs.existsSync(OUT_DIR)) {
     fs.mkdirSync(OUT_DIR, { recursive: true })
   }
   const OUT_FILE = path.join(OUT_DIR, config.outputName)
-  const TOTAL_FRAME = config.totalFrame || 120
+  const TOTAL_FRAME = config.duration * config.fps
   const WIDTH = config.width || 512
   const HEIGHT = config.height || 256
-  const FRAME_TIME = config.frameTime || (1000 / 60)
+  const FRAME_TIME = 1000 / config.fps
 
   const outStream = fs.createWriteStream(OUT_FILE)
 
@@ -61,7 +70,7 @@ const renderToGif = (
   encoder.createReadStream().pipe(outStream)
   encoder.setRepeat(0)
   encoder.setDelay(FRAME_TIME)
-  encoder.setQuality(100)
+  encoder.setQuality(config.quality || 10)
 
   camera.position.z = 3
 
@@ -83,6 +92,7 @@ const renderToGif = (
       encoder.finish()
       spinner.succeed()
       console.log(`Saved ${OUT_FILE}`)
+      onFinish && onFinish()
     }
   }
 
@@ -92,3 +102,8 @@ const renderToGif = (
 }
 
 exports.renderToGif = renderToGif
+exports.renderToGifPromise = (meshData, config) => {
+  return new Promise((resolve) => {
+    renderToGif(meshData, config, resolve)
+  })
+}

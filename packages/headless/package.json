@@ -2,6 +2,7 @@
   "name": "headless",
   "version": "1.0.0",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "snapshot": "node snapshot.js"
   },
@@ -9,7 +10,6 @@
   "author": "KusStar",
   "license": "MIT",
   "dependencies": {
-    "@types/three": "^0.134.0",
     "angle-normals": "^1.0.0",
     "gifencoder": "^2.0.1",
     "kusstar": "workspace:^0.2.1",
@@ -17,5 +17,9 @@
     "ora": "5.4.1",
     "regl": "^2.1.0",
     "three": "^0.134.0"
+  },
+  "devDependencies": {
+    "@types/three": "^0.134.0",
+    "vox-to-mesh": "workspace:^1.0.0"
   }
 }
