@@ -43,7 +43,8 @@ const main = async () => {
 
   const snapshotMarkdown = snapshot.map(({ before, after }) =>
     `- [${before}](./${before})
-![${before}](./snapshot/${after})`).join('\n')
+
+![${before}](./snapshot/${after})`).join('\n\n')
 
   const outMarkdown = readmeMarkdown.replace(/## Snapshot.+/gms, `## Snapshot
 
