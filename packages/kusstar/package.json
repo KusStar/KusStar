@@ -1,0 +1,17 @@
+{
+  "name": "kusstar",
+  "version": "0.2.1",
+  "description": "Symbol of KusStar",
+  "main": "dist/index.cjs",
+  "typings": "dist/index.d.ts",
+  "module": "dist/index.mjs",
+  "scripts": {
+    "gen": "node ./scripts/gen_mesh.js"
+  },
+  "author": "KusStar",
+  "repository": "https://github.com/KusStar/KusStar",
+  "license": "MIT",
+  "devDependencies": {
+    "vox-to-mesh": "workspace:^0.0.1"
+  }
+}
