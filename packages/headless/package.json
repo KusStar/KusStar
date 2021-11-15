@@ -1,0 +1,22 @@
+{
+  "name": "headless",
+  "private": true,
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "KusStar",
+  "license": "MIT",
+  "dependencies": {
+    "@types/three": "^0.134.0",
+    "angle-normals": "^1.0.0",
+    "gifencoder": "^2.0.1",
+    "kusstar": "workspace:^0.2.1",
+    "node-canvas-webgl": "^0.2.6",
+    "ora": "5.4.1",
+    "regl": "^2.1.0",
+    "three": "^0.134.0"
+  }
+}
