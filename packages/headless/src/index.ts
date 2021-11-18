@@ -4,20 +4,30 @@
  * @reference https://stackoverflow.com/questions/41670308/three-buffergeometry-how-do-i-manually-set-face-colors
  */
 
-/* eslint-disable @typescript-eslint/no-var-requires */
-const fs = require('fs')
-const THREE = require('three')
-const GIFEncoder = require('gifencoder')
-const { createCanvas } = require('node-canvas-webgl')
-const ora = require('ora')
-const path = require('path')
+import fs from 'fs'
+import GIFEncoder from 'gifencoder'
+import { createCanvas } from 'node-canvas-webgl'
+import ora from 'ora'
+import path from 'path'
+import * as THREE from 'three'
+import { MeshData } from 'vox-to-mesh'
 
-const _config = require('./config.json')
+import _config from '../config.json'
 
-const renderToGif = (
-  meshData,
-  config = {},
-  onFinish
+export type Config = {
+  duration: number
+  fps: number
+  width: number
+  height: number
+  outDir: string
+  outName: string
+  quality: number
+}
+
+export const renderToGif = (
+  meshData: MeshData,
+  config: Partial<Config>,
+  onFinish?: (...args: any[]) => void
 ) => {
   config.duration = config.duration || _config.duration
   config.fps = config.fps || _config.fps
@@ -53,9 +63,11 @@ const renderToGif = (
   scene.add(light)
 
   const geometry = new THREE.BufferGeometry()
+  // @ts-ignore
   geometry.setAttribute('position', new THREE.BufferAttribute(new Float32Array(meshData.positions), 3))
   geometry.setAttribute('normal', new THREE.BufferAttribute(new Float32Array(meshData.normals), 3))
   geometry.setAttribute('color', new THREE.BufferAttribute(new Float32Array(meshData.colors), 3))
+  // @ts-ignore
   geometry.setIndex(new THREE.BufferAttribute(new Uint32Array(meshData.cells), 1))
   const material = new THREE.MeshStandardMaterial({
     roughness: 1.0,
@@ -101,9 +113,8 @@ const renderToGif = (
   encoder.start()
 }
 
-exports.renderToGif = renderToGif
-exports.renderToGifPromise = (meshData, config) => {
-  return new Promise((resolve) => {
+export const renderToGifPromise = (meshData, config) => {
+  return new Promise<any>((resolve) => {
     renderToGif(meshData, config, resolve)
   })
 }

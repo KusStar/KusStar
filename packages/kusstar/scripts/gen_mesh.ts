@@ -1,7 +1,6 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const fs = require('fs')
-const path = require('path')
-const { voxToMeshFile } = require('vox-to-mesh')
+import fs from 'fs'
+import path from 'path'
+import { voxToMeshFile } from 'vox-to-mesh'
 
 const ART_DIR = path.join(__dirname, '../../art')
 const DIST_DIR = path.join(__dirname, '../dist')

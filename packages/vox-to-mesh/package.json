@@ -2,11 +2,15 @@
   "name": "vox-to-mesh",
   "private": true,
   "version": "1.0.0",
-  "main": "index.js",
-  "types": "index.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "keywords": [],
   "author": "KusStar",
   "license": "MIT",
+  "scripts": {
+    "build": "tsup src/index.ts --dts --format cjs,esm"
+  },
   "dependencies": {
     "ramda": "^0.27.1",
     "vox-reader": "^2.0.3",

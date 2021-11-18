@@ -1,8 +1,7 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const { voxToMeshData } = require('vox-to-mesh')
-const { renderToGifPromise } = require('headless')
-const fs = require('fs')
-const path = require('path')
+import fs from 'fs'
+import { renderToGifPromise } from 'headless'
+import path from 'path'
+import { voxToMeshData } from 'vox-to-mesh'
 
 const ASSETS_DIR = path.join(__dirname, '../')
 const SNAPSHOT_DIR = path.join(ASSETS_DIR, 'snapshot')

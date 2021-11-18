@@ -1,13 +1,18 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
+import fs from 'fs'
+import path from 'path'
+import { flatten } from 'ramda'
+import readVox from 'vox-reader'
+import voxelTriangulation from 'voxel-triangulation'
+import zeros from 'zeros'
 
-const readVox = require('vox-reader')
-const zeros = require('zeros')
-const voxelTriangulation = require('voxel-triangulation')
-const { flatten } = require('ramda')
-const fs = require('fs')
-const path = require('path')
+export type MeshData = {
+  positions: number[][]
+  cells: number[][]
+  normals: number[]
+  colors: number[]
+}
 
-const voxToMeshData = (voxFile) => {
+export const voxToMeshData = (voxFile: string): MeshData => {
   const voxData = fs.readFileSync(voxFile)
 
   const vox = readVox(voxData)
@@ -44,7 +49,7 @@ const writeToFile = (outDir, name, data) => {
   fs.writeFileSync(path.join(outDir, name), data, { encoding: 'utf8' })
 }
 
-const voxToMeshFile = (voxFile, outputDir, name) => {
+export const voxToMeshFile = (voxFile: string, outputDir: string, name: string) => {
   const {
     positions: _positions,
     cells: _cells,
@@ -83,6 +88,3 @@ export const normals: number[];
   writeToFile(outputDir, `${name}.mjs`, mjs)
   writeToFile(outputDir, `${name}.d.ts`, typings)
 }
-
-exports.voxToMeshFile = voxToMeshFile
-exports.voxToMeshData = voxToMeshData

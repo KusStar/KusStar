@@ -7,7 +7,7 @@
   "author": "KusStar",
   "license": "MIT",
   "scripts": {
-    "render-preview": "node ./scripts/render-preview"
+    "render-preview": "node -r @swc-node/register ./scripts/render-preview.ts"
   },
   "dependencies": {
     "headless": "workspace:^1.0.0",
