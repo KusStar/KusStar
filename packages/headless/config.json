@@ -4,5 +4,6 @@
   "width": 512,
   "height": 256,
   "outDir": "../../snapshot",
-  "outName": "kusstar.gif"
+  "outName": "kusstar.gif",
+  "quality": 10
 }
