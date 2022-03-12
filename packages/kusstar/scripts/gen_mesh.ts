@@ -1,8 +1,8 @@
+import { voxToMeshFile } from '@kuss/vox-to-mesh'
 import fs from 'fs'
 import path from 'path'
-import { voxToMeshFile } from 'vox-to-mesh'
 
-const ART_DIR = path.join(__dirname, '../../art')
+const ART_DIR = path.join(__dirname, '../../art/assets')
 const DIST_DIR = path.join(__dirname, '../dist')
 
 const mkDist = () => fs.mkdirSync(DIST_DIR, { recursive: true })

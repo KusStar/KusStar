@@ -4,13 +4,13 @@
  * @reference https://stackoverflow.com/questions/41670308/three-buffergeometry-how-do-i-manually-set-face-colors
  */
 
+import { MeshData } from '@kuss/vox-to-mesh'
 import fs from 'fs'
 import GIFEncoder from 'gifencoder'
 import { createCanvas } from 'node-canvas-webgl'
 import ora from 'ora'
 import path from 'path'
 import * as THREE from 'three'
-import { MeshData } from 'vox-to-mesh'
 
 import _config from '../config.json'
 

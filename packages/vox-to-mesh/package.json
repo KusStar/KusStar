@@ -1,5 +1,5 @@
 {
-  "name": "vox-to-mesh",
+  "name": "@kuss/vox-to-mesh",
   "private": true,
   "version": "1.0.0",
   "main": "dist/index.js",

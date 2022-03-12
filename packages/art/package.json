@@ -1,5 +1,5 @@
 {
-  "name": "art",
+  "name": "@kuss/art",
   "private": true,
   "version": "1.0.0",
   "main": "index.js",
@@ -7,10 +7,10 @@
   "author": "KusStar",
   "license": "MIT",
   "scripts": {
-    "render-preview": "node -r @swc-node/register ./scripts/render-preview.ts"
+    "snapshot": "ts-node ./scripts/snapshot.ts"
   },
   "dependencies": {
-    "headless": "workspace:^1.0.0",
-    "vox-to-mesh": "workspace:^1.0.0"
+    "@kuss/headless": "workspace:^1.0.0",
+    "@kuss/vox-to-mesh": "workspace:^1.0.0"
   }
 }

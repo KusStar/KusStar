@@ -1,11 +1,10 @@
 {
-  "name": "headless",
+  "name": "@kuss/headless",
   "version": "1.0.0",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "scripts": {
-    "snapshot": "node -r @swc-node/register snapshot.ts",
     "build": "tsup src/index.ts --dts --format cjs,esm"
   },
   "keywords": [],
@@ -15,13 +14,13 @@
     "angle-normals": "^1.0.0",
     "gifencoder": "^2.0.1",
     "kusstar": "workspace:^0.2.1",
-    "node-canvas-webgl": "^0.2.6",
+    "node-canvas-webgl": "^0.2.7",
     "ora": "5.4.1",
     "regl": "^2.1.0",
     "three": "^0.134.0"
   },
   "devDependencies": {
-    "@types/three": "^0.134.0",
-    "vox-to-mesh": "workspace:^1.0.0"
+    "@kuss/vox-to-mesh": "workspace:^1.0.0",
+    "@types/three": "^0.134.0"
   }
 }

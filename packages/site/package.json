@@ -1,5 +1,5 @@
 {
-  "name": "kusstar-site",
+  "name": "@kuss/site",
   "private": true,
   "version": "0.0.1",
   "scripts": {

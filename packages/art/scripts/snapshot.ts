@@ -1,9 +1,10 @@
+import { renderToGifPromise } from '@kuss/headless'
+import { voxToMeshData } from '@kuss/vox-to-mesh'
 import fs from 'fs'
-import { renderToGifPromise } from 'headless'
 import path from 'path'
-import { voxToMeshData } from 'vox-to-mesh'
 
-const ASSETS_DIR = path.join(__dirname, '../')
+const ART_DIR = path.join(__dirname, '../')
+const ASSETS_DIR = path.join(__dirname, '../assets')
 const SNAPSHOT_DIR = path.join(ASSETS_DIR, 'snapshot')
 
 if (fs.existsSync(SNAPSHOT_DIR)) {
@@ -24,8 +25,8 @@ const main = async () => {
           height: 300,
           width: 300,
           fps: 60,
-          duration: 5,
-          outDir: path.join(ASSETS_DIR, 'snapshot'),
+          duration: 3,
+          outDir: path.join(ART_DIR, 'snapshot'),
           outName: outFile
         })
       )
@@ -37,7 +38,7 @@ const main = async () => {
   })
   await Promise.all(promises)
 
-  const README_FILE = path.join(ASSETS_DIR, 'README.md')
+  const README_FILE = path.join(ART_DIR, 'README.md')
   const readmeMarkdown = fs.readFileSync(README_FILE, 'utf8')
 
   const snapshotMarkdown = snapshot.map(({ before, after }) =>
