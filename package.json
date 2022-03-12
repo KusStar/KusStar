@@ -6,15 +6,15 @@
     "lint": "eslint --ext .ts ./",
     "lint:fix": "npm run lint -- --fix",
     "bootstrap": "ts-node scripts/bootstrap.ts",
-    "snapshot": "ts-node scripts/snapshot.ts",
+    "snapshot:root": "ts-node scripts/snapshot.ts",
     "snapshot:art": "pnpm snapshot --filter @kuss/art"
   },
   "license": "MIT",
   "devDependencies": {
     "@kuss/eslint-config-vanilla": "^2.3.0",
+    "@kuss/headless": "workspace:^1.0.0",
     "@types/node": "^16.11.7",
     "eslint": "^8.1.0",
-    "@kuss/headless": "workspace:^1.0.0",
     "kusstar": "workspace:^0.2.1",
     "ora": "5.4.1",
     "ts-node": "^10.7.0",
