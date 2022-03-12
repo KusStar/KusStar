@@ -42,7 +42,7 @@ const main = async () => {
   const readmeMarkdown = fs.readFileSync(README_FILE, 'utf8')
 
   const snapshotMarkdown = snapshot.map(({ before, after }) =>
-    `- [${before}](./${before})
+    `- [${before}](./assets/${before})
 
 ![${before}](./snapshot/${after})`).join('\n\n')
 
