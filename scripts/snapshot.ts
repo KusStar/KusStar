@@ -60,8 +60,7 @@ class KussRenderer extends BasicRenderer {
 
 const kussRenderer = new KussRenderer({
   quality: 10,
-  width: 256,
-  height: 128,
+  fps: 36,
   outDir: path.join(__dirname, '../snapshot')
 })
 
