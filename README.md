@@ -1,5 +1,7 @@
 ### 🙏 后现代缝合怪 🙏
 
-<a href="https://kusstar.vercel.app/">
-  <img src="./snapshot/kusstar.gif" width="100%" style="margin-top: 12px;"/>
-</a>
+<div align="center">
+  <a href="https://kusstar.vercel.app/">
+    <img src="./snapshot/kusstar.gif" alt="I am useless thing!" min-width="100%"/>
+  </a>
+</div>
