@@ -3,12 +3,11 @@ import kusstar from 'kusstar'
 import path from 'path'
 import * as THREE from 'three'
 
+const o = 16
+
 class KussRenderer extends BasicRenderer {
   kussMesh: THREE.Mesh
-  km2: THREE.Mesh
-  km22: THREE.Mesh
-  km3: THREE.Mesh
-  km33: THREE.Mesh
+  kms: THREE.Mesh[] = []
 
   constructor(config: Partial<Config>) {
     super(config)
@@ -20,47 +19,61 @@ class KussRenderer extends BasicRenderer {
   #addMeshes() {
     this.kussMesh = this.getMeshFromVox(kusstar)
 
-    this.km2 = this.kussMesh.clone()
-    this.km2.scale.multiplyScalar(0.3)
+    const ycount = o
+    const xcount = o
 
-    this.km22 = this.km2.clone()
-    this.km3 = this.km2.clone()
-    this.km33 = this.km2.clone()
+    for (let y = 0; y < ycount; y++) {
+      for (let i = 0; i < xcount; i++) {
+        const px = -o + i * (o / 8)
+        const py = -o + y * (o / 8)
 
-    this.scene.add(this.kussMesh, this.km2, this.km22, this.km3, this.km33)
+        const km = this.getMeshFromVox(kusstar)
+
+        km.material.transparent = true
+        km.material.opacity = 0.5
+
+        km.position.x = px
+        km.position.y = py
+
+        km.position.z = -10
+
+        km.rotation.x = Math.PI / 4
+
+        this.kms.push(km)
+        this.scene.add(km)
+      }
+    }
+
+    this.scene.add(this.kussMesh)
   }
 
   raf() {
     super.raf()
 
     const angle = Math.PI / this.totalFrame * 2
-    const factor = 2
+
+    const kmo = angle * Math.PI
+
+    for (const km of this.kms) {
+      km.rotation.y += angle
+
+      km.position.x += kmo
+      km.position.y += kmo
+
+      if (km.position.x >= o) {
+        km.position.x = -o
+      }
+      if (km.position.y >= o) {
+        km.position.y = -o
+      }
+    }
 
     this.kussMesh.rotation.y += angle
-
-    this.km2.rotation.y += angle
-    this.km22.rotation.y += angle
-
-    this.km3.rotation.y += angle
-    this.km33.rotation.y += angle
-
-    this.km2.position.x = Math.sin(this.kussMesh.rotation.y * factor)
-    this.km2.position.z = Math.cos(this.kussMesh.rotation.y * factor)
-
-    this.km22.position.x = Math.sin(this.kussMesh.rotation.y * factor + Math.PI / 3) * 1.3
-    this.km22.position.z = Math.cos(this.kussMesh.rotation.y * factor + Math.PI / 3) * 1.3
-
-    this.km3.position.x = Math.sin(this.kussMesh.rotation.y * factor + Math.PI / 2)
-    this.km3.position.y = Math.cos(this.kussMesh.rotation.y * factor + Math.PI / 2)
-
-    this.km33.position.x = Math.sin(this.kussMesh.rotation.y * factor) * 1.3
-    this.km33.position.y = Math.cos(this.kussMesh.rotation.y * factor) * 1.3
   }
 }
 
 const kussRenderer = new KussRenderer({
   quality: 10,
-  fps: 36,
   outDir: path.join(__dirname, '../snapshot')
 })
 
