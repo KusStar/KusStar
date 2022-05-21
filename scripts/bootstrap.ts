@@ -2,13 +2,13 @@ import { execSync } from 'child_process'
 import ora from 'ora'
 
 const buildVox = ora('Building vox-to-mesh').start()
-execSync('pnpm build --filter vox-to-mesh')
+execSync('pnpm --filter @kuss/vox-to-mesh build ')
 buildVox.succeed('Built vox-to-mesh')
 
 const buildHeadless = ora('Building headless').start()
-execSync('pnpm build --filter headless')
+execSync('pnpm --filter @kuss/headless build')
 buildHeadless.succeed('Built headless')
 
 const buildKusstar = ora('Generating kusstar mesh').start()
-execSync('pnpm gen --filter kusstar')
+execSync('pnpm --filter kusstar gen')
 buildKusstar.succeed('Generated kusstar')
