@@ -14,6 +14,7 @@
     "@kuss/eslint-config-vanilla": "^2.3.0",
     "@kuss/headless": "workspace:^1.0.0",
     "@types/node": "^16.11.7",
+    "@types/three": "^0.134.0",
     "eslint": "^8.1.0",
     "kusstar": "workspace:^0.2.1",
     "ora": "5.4.1",
