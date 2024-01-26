@@ -2,7 +2,7 @@
 
 Building things for FUN.
 
-Lover of #GUI, #ReactNative, #SwiftUI, #ComposeUI, #MacOS
+A Cultist of #GUI, React Native, SwiftUI, ComposeUI, MacOS
 
 <div align="center">
   <a href="https://kusstar.vercel.app/">
